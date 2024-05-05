@@ -10,6 +10,5 @@ namespace User_Service.Repository
 
         Task<IEnumerable<SpeechTherapist>> Login();
 
-
     }
 }
