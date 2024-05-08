@@ -1,18 +1,35 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using User_Service.DTO;
 
 namespace User_Service.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class SpeechTherapistController : Controller
+    public class SpeechTherapistController : ControllerBase
     {
-        //Login
+        // Get your information
+        [HttpGet("profile")]
+        public IActionResult GetInformation()
+        {
+            // Implementation for getting information
+            return Ok("Your information");
+        }
 
-        //Register
+        // Change data
+        [HttpPut("changedata")]
+        public IActionResult ChangeData([FromBody] SpeechTherapistDTO model)
+        {
+            // Implementation for changing data
+            return Ok("Data changed successfully");
+        }
 
-        //Get your information
-
-        //Change data
+        // Remove account
+        [HttpDelete("remove")]
+        public IActionResult RemoveAccount()
+        {
+            // Implementation for removing account
+            return Ok("Account removed successfully");
+        }
     }
 }
