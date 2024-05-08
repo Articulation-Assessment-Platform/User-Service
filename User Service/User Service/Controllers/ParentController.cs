@@ -7,5 +7,15 @@ namespace User_Service.Controllers
     public class ParentController : Controller
     {
         //Login
+
+        //Create
+
+        //Modify
+
+        //findbyid
+
+        //getall (childid)
+
+        //Remove
     }
 }

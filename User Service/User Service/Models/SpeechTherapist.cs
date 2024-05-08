@@ -2,6 +2,8 @@
 {
     public class SpeechTherapist : User
     {
+        public string RoleName { get; } = "SpeechTherapist";
+
         public string Email { get; set; }
         public string Password {  get; set; }
         public Byte[] Salt { get; set; }
