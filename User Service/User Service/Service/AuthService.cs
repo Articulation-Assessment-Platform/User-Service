@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using System.Security.Claims;
 using System.Text;
 using User_Service.Models;
@@ -12,10 +11,12 @@ namespace User_Service.Service
     public class AuthService : IAuthService
     {
         private readonly JwtSettings _jwtSettings;
+        private readonly IConfiguration _configuration;
 
-        public AuthService(IOptions<JwtSettings> jwtSettings)
+        public AuthService(IOptions<JwtSettings> jwtSettings, IConfiguration configuration)
         {
             _jwtSettings = jwtSettings.Value;
+            _configuration = configuration;
         }
 
         public string GenerateToken(User user)
@@ -28,15 +29,17 @@ namespace User_Service.Service
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim(ClaimTypes.Role, user.RoleName.ToString())
+                    new Claim(ClaimTypes.Role, ((Role)user.Role).ToString())
                 }),
                 Expires = DateTime.UtcNow.AddHours(_jwtSettings.ExpiryHours),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                Issuer = _configuration["Jwt:Issuer"],
+                Audience = _configuration["Jwt:Audience"]
+
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
-
     }
 }

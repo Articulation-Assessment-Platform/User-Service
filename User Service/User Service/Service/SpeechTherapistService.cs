@@ -17,9 +17,9 @@ namespace User_Service.Service
             _passwordHasher = passwordHasher;
         }
 
-        public Task<SpeechTherapistDTO> GetInformation()
+        public async Task<SpeechTherapist> GetInformation(int id)
         {
-            throw new NotImplementedException();
+            return await _speechTherapistRepository.GetByIdAsync(id);
         }
 
         public SpeechTherapist Authenticate(string email, string password)
@@ -40,9 +40,9 @@ namespace User_Service.Service
             return null;
         }
 
-        public Task ModifyInformation()
+        public void ModifyInformation(SpeechTherapist speechTherapist)
         {
-            throw new NotImplementedException();
+             _speechTherapistRepository.Update(speechTherapist);
         }
 
         public SpeechTherapist GetUserByEmail(string email)
@@ -53,6 +53,12 @@ namespace User_Service.Service
         public Task Register(SpeechTherapist speechTherapist)
         {
             return _speechTherapistRepository.AddAsync(speechTherapist);
+        }
+
+        public async void RemoveAccount(int id)
+        {
+            SpeechTherapist sp = await GetInformation(id);
+            _speechTherapistRepository.Remove(sp);
         }
     }
 }
