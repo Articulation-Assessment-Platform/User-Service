@@ -77,6 +77,7 @@ namespace User_Service.Controllers
             var speechTherapist = new SpeechTherapist
             {
                 Email = model.Email,
+                Role = Role.Therapist,
                 Password = hashedPassword,
                 FirstName = model.FirstName,
                 LastName = model.LastName,

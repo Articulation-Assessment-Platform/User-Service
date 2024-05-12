@@ -1,10 +1,12 @@
-﻿namespace User_Service.Models
+﻿using System.Text.Json.Serialization;
+
+namespace User_Service.Models
 {
     public class Parent : User
-    {
-        public string RoleName { get; } = "Parent";
+    { 
 
         public string Email { get; set; }
+        [JsonIgnore]
         public string Password { get; set; }
         public Byte[] Salt { get; set; }
 

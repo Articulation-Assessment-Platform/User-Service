@@ -7,12 +7,14 @@ namespace User_Service.Service.Interfaces
     {
         SpeechTherapist Authenticate(string email, string password);
 
-        Task Register(SpeechTherapist registerDTO);
+        Task Register(SpeechTherapist speechTherapist);
 
-        Task<SpeechTherapistDTO> GetInformation();
+        Task<SpeechTherapist> GetInformation(int id);
 
-        Task ModifyInformation();
+        void ModifyInformation(SpeechTherapist speechTherapist);
 
         SpeechTherapist GetUserByEmail(string email);
+
+        void RemoveAccount(int id);
     }
 }

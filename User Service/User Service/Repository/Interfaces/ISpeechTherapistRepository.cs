@@ -6,5 +6,6 @@ namespace User_Service.Repository.Interfaces
     {
 
         SpeechTherapist GetUserByEmail(string email);
+
     }
 }

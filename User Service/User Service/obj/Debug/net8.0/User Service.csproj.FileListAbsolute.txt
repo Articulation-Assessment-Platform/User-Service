@@ -108,3 +108,6 @@ C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User S
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
