@@ -9,7 +9,7 @@ using User_Service.Service.Interfaces;
 namespace User_Service.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [Authorize(Roles = "Therapist")]
     public class SpeechTherapistController : ControllerBase
     {

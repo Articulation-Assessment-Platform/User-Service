@@ -62,7 +62,7 @@ builder.Services.AddDbContext<UserContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-c.SwaggerDoc("v1", new() { Title = "Maike's API", Version = "v1" });
+c.SwaggerDoc("v1", new() { Title = "User Service API", Version = "v1" });
 
 // Define the OAuth2.0 scheme that's in use (i.e., Implicit Flow)
 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -93,8 +93,11 @@ c.AddSecurityRequirement(new OpenApiSecurityRequirement()
     });
 });
 
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
+app.UseHealthChecks("/health");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
