@@ -102,7 +102,7 @@ jobs:
     - name: Build and push Docker image
       run: |
         docker buildx build --push --tag ${{ secrets.DOCKER_USERNAME }}/user-service:${{ github.sha }} .
-      working-directory: ./User Service
+      working-directory: ./User Service/User Service
         
   security_scan:
     runs-on: ubuntu-latest
