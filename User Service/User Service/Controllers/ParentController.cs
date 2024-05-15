@@ -8,7 +8,7 @@ namespace User_Service.Controllers
 {
     [Authorize(Roles = "Therapist")]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ParentController : Controller
     {
         private readonly IParentService _parentService;
