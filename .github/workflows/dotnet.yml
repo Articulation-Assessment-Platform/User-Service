@@ -115,30 +115,5 @@ jobs:
       uses: azure/setup-kubectl@v1
       with:
         version: 'latest'
-
-    - name: Deploy to Kubernetes
-      run: |
-        kubectl set image deployment/user-service user-service=${{ secrets.DOCKER_USERNAME }}/user-service:${{ github.sha }} --record
-      env:
-        KUBECONFIG: ${{ secrets.KUBECONFIG }}
-
-  logging:
-    runs-on: ubuntu-latest
-    needs: deploy
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up logging config
-      run: |
-        kubectl apply -f - <<EOF
-        apiVersion: v1
-        kind: ConfigMap
-        metadata:
-          name: user-service-logging-config
-        data:
-          log_config: |-
-            <your logging configuration here>
-        EOF
       env:
         KUBECONFIG: ${{ secrets.KUBECONFIG }}
