@@ -12,8 +12,8 @@ using User_Service.Data;
 namespace User_Service.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20240508111548_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240529075020_LatestVersion")]
+    partial class LatestVersion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,9 @@ namespace User_Service.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("Archived")
+                        .HasColumnType("boolean");
+
                     b.Property<DateTime>("Birthdate")
                         .HasColumnType("timestamp with time zone");
 
@@ -47,12 +50,11 @@ namespace User_Service.Migrations
                     b.Property<int>("ParentId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("SpeechTherapistId")
+                    b.Property<int>("Role")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("SpeechTherapistId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -83,17 +85,8 @@ namespace User_Service.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<byte[]>("Salt")
-                        .IsRequired()
-                        .HasColumnType("bytea");
-
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Role")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -120,17 +113,8 @@ namespace User_Service.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<byte[]>("Salt")
-                        .IsRequired()
-                        .HasColumnType("bytea");
-
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Role")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
