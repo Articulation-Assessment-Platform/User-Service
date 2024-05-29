@@ -5,6 +5,5 @@ namespace User_Service.Service.Interfaces
 {
     public interface IParentService
     {
-        Parent Authenticate(string email, string password);
     }
 }

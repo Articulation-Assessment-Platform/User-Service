@@ -6,10 +6,6 @@ namespace User_Service.Models
     {
 
         public string Email { get; set; }
-        [JsonIgnore]
-        public string Password {  get; set; }
-        [JsonIgnore]
-        public Byte[] Salt { get; set; }
         public ICollection<Child> children { get; set; }
     }
 }

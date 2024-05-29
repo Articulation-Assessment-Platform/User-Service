@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  userservice:
+    image: ${DOCKER_REGISTRY-}userservice
+    networks:
+      - backend
+    build:
+      context: .
+      dockerfile: User Service/Dockerfile
+networks:
+  backend:
+    name: backend
+    external: true
+    driver: bridge
