@@ -62,7 +62,7 @@ jobs:
       run: echo "JAVA_HOME=$(find /usr/lib/jvm -name 'java-11*' -type d)" >> $GITHUB_ENV
    
     - name: Check java
-      run: echo java -version
+      run: java -version
       
     - name: Setup SonarQube
       uses: SonarSource/sonarcloud-github-action@v1
