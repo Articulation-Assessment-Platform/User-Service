@@ -1,49 +1,76 @@
-name: Build
+name: CI/CD Pipeline
 
 on:
   push:
     branches:
       - main
-
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
-    name: Build and analyze
-    runs-on: windows-latest
-    
+    runs-on: ubuntu-latest
+
+    services:
+      docker:
+        image: docker:19.03.12
+        options: --privileged
+
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Set up JDK 17
-        uses: actions/setup-java@v1
-        with:
-          java-version: 17
-      - name: Cache SonarQube packages
-        uses: actions/cache@v1
-        with:
-          path: ~\.sonar\cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-      - name: Cache SonarQube scanner
-        id: cache-sonar-scanner
-        uses: actions/cache@v1
-        with:
-          path: .\.sonar\scanner
-          key: ${{ runner.os }}-sonar-scanner
-          restore-keys: ${{ runner.os }}-sonar-scanner
-      - name: Install SonarQube scanner
-        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-        shell: powershell
-        run: |
-          New-Item -Path .\.sonar\scanner -ItemType Directory
-          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
-        working-directory: ./User Service
-      - name: Build and analyze
-        shell: powershell
-        run: |
-          dotnet build
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"User-microservice" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="http://localhost:9000"
-          
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-        working-directory: ./User Service
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore --configuration Release
+
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+    - name: Setup SonarQube
+      uses: SonarSource/sonarcloud-github-action@v1
+      with:
+        projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+        organization: ${{ secrets.SONAR_ORGANIZATION }}
+        token: ${{ secrets.SONAR_TOKEN }}
+
+    - name: Run SonarQube Analysis
+      run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+    - name: Build for SonarQube
+      run: dotnet build
+    - name: End SonarQube Analysis
+      run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
+    - name: Docker Login
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Build Docker image
+      run: docker build -t myapp:${{ github.sha }} .
+
+    - name: Push Docker image
+      run: docker push myapp:${{ github.sha }}
+
+    - name: Docker Compose Build
+      run: docker-compose -f docker-compose.yml build
+
+    - name: Docker Compose Up
+      run: docker-compose -f docker-compose.yml up -d
+
+    - name: Setup Kubectl
+      uses: azure/setup-kubectl@v1
+      with:
+        version: 'latest'
+
+    - name: Setup kubeconfig
+      run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+
+    - name: Deploy to Kubernetes
+      run: kubectl apply -f k8s/deployment.yml
