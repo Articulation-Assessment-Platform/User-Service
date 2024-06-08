@@ -58,13 +58,13 @@ jobs:
           token: "squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
 
       - name: Run SonarQube Analysis
-        run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="http://localhost:9000"
+        run: dotnet sonarscanner begin /k:"UserMicroservice" /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" /d:sonar.host.url="http://localhost:9000"
 
       - name: Build for SonarQube
         run: dotnet build 'User Service/User Service/User Service.csproj'
 
       - name: End SonarQube Analysis
-        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        run: dotnet sonarscanner end /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
 
   docker:
     needs: sonarqube
