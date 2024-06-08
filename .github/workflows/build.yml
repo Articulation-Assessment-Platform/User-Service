@@ -68,6 +68,7 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@v1
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        java-version: '17'
 
     - name: Run SonarQube Analysis
       run: dotnet sonarscanner begin /k:"UserMicroservice" /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" /d:sonar.host.url="http://localhost:9000"
