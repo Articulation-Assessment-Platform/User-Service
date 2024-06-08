@@ -11,135 +11,107 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.x
 
-    - name: Restore dependencies
-      run: dotnet restore 'User Service/User Service/User Service.csproj'
+      - name: Restore dependencies
+        run: dotnet restore 'User Service/User Service/User Service.csproj'
 
-    - name: Build
-      run: dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
+      - name: Build
+        run: dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
+
   test:
     needs: build
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.x
 
-    - name: Restore dependencies
-      run: dotnet restore 'User Service/User Service/User Service.csproj'
+      - name: Restore dependencies
+        run: dotnet restore 'User Service/User Service/User Service.csproj'
 
-    - name: Test
-      run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
+      - name: Test
+        run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
+
   sonarqube:
     needs: test
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Setup SonarQube
+        uses: SonarSource/sonarcloud-github-action@v1
+        with:
+          projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+          token: ${{ secrets.SONAR_TOKEN }}
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.x
+      - name: Run SonarQube Analysis
+        run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="http://localhost:9000"
 
-    - name: Restore dependencies
-      run: dotnet restore 'User Service/User Service/User Service.csproj'
+      - name: Build for SonarQube
+        run: dotnet build 'User Service/User Service/User Service.csproj'
 
-    - name: Setup SonarQube
-      run: |
-        docker run -d --name sonarqube -p 9000:9000 sonarqube:latest
-        # Wait for SonarQube to be fully up and running
-        until $(curl --output /dev/null --silent --head --fail http://localhost:9000); do
-          printf '.'
-          sleep 5
-        done
-
-    - name: Run SonarQube Analysis
-      run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="http://localhost:9000"
-
-    - name: Build for SonarQube
-      run: dotnet build 'User Service/User Service/User Service.csproj'
-
-    - name: End SonarQube Analysis
-      run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+      - name: End SonarQube Analysis
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
   docker:
     needs: sonarqube
     runs-on: ubuntu-latest
 
-    services:
-      docker:
-        image: docker:19.03.12
-        options: --privileged
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.x
 
-    - name: Restore dependencies
-      run: dotnet restore 'User Service/User Service/User Service.csproj'
+      - name: Restore dependencies
+        run: dotnet restore 'User Service/User Service/User Service.csproj'
 
-    - name: Docker Login
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      - name: Docker Login
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-    - name: Build Docker image
-      run: docker build -t myapp:${{ github.sha }} .
+      - name: Build Docker image
+        run: docker build -t myapp:${{ github.sha }} .
 
-    - name: Push Docker image
-      run: docker push myapp:${{ github.sha }}
+      - name: Push Docker image
+        run: docker push myapp:${{ github.sha }}
 
-    - name: Docker Compose Build
-      run: docker-compose -f docker-compose.yml build
+      - name: Docker Compose Build
+        run: docker-compose -f docker-compose.yml build
 
-    - name: Docker Compose Up
-      run: docker-compose -f docker-compose.yml up -d
+      - name: Docker Compose Up
+        run: docker-compose -f docker-compose.yml up -d
 
   kubernetes:
     needs: docker
     runs-on: ubuntu-latest
 
-    services:
-      docker:
-        image: docker:19.03.12
-        options: --privileged
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.x
+      - name: Setup Kubectl
+        uses: azure/setup-kubectl@v1
+        with:
+          version: 'latest'
 
-    - name: Restore dependencies
-      run: dotnet restore 'User Service/User Service/User Service.csproj'
+      - name: Setup kubeconfig
+        run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
 
-    - name: Setup Kubectl
-      uses: azure/setup-kubectl@v1
-      with:
-        version: 'latest'
-
-    - name: Setup kubeconfig
-      run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
-
-    - name: Deploy to Kubernetes
-      run: kubectl apply -f k8s/deployment.yml
+      - name: Deploy to Kubernetes
+        run: kubectl apply -f k8s/deployment.yml
