@@ -43,7 +43,6 @@ jobs:
     - name: Test
       run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
   sonarqube:
-    needs: test
     runs-on: ubuntu-latest
     
     steps:
@@ -66,7 +65,7 @@ jobs:
         token: ${{ secrets.SONAR_TOKEN }}
 
     - name: Run SonarQube Analysis
-      run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+      run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /d:sonar.organization="${{ secrets.SONAR_ORGANIZATION }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
 
     - name: Build for SonarQube
       run: dotnet build 'User Service/User Service/User Service.csproj'
