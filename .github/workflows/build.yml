@@ -11,6 +11,38 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.x
+
+    - name: Restore dependencies
+      run: dotnet restore 'User Service/User Service/User Service.csproj'
+
+    - name: Build
+      run: dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.x
+
+    - name: Restore dependencies
+      run: dotnet restore 'User Service/User Service/User Service.csproj'
+
+    - name: Test
+      run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
+  ew:
+    runs-on: ubuntu-latest
 
     services:
       docker:
