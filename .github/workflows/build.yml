@@ -43,6 +43,7 @@ jobs:
     - name: Test
       run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
   sonarqube:
+    needs: test
     runs-on: ubuntu-latest
     
     steps:
@@ -58,14 +59,16 @@ jobs:
       run: dotnet restore 'User Service/User Service/User Service.csproj'
 
     - name: Setup SonarQube
-      uses: SonarSource/sonarcloud-github-action@v1
-      with:
-        projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
-        organization: ${{ secrets.SONAR_ORGANIZATION }}
-        token: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        docker run -d --name sonarqube -p 9000:9000 sonarqube:latest
+        # Wait for SonarQube to be fully up and running
+        until $(curl --output /dev/null --silent --head --fail http://localhost:9000); do
+          printf '.'
+          sleep 5
+        done
 
     - name: Run SonarQube Analysis
-      run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /d:sonar.organization="${{ secrets.SONAR_ORGANIZATION }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+      run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="http://localhost:9000"
 
     - name: Build for SonarQube
       run: dotnet build 'User Service/User Service/User Service.csproj'
