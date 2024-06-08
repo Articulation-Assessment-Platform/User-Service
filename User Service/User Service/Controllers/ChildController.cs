@@ -6,7 +6,7 @@ using User_Service.Service.Interfaces;
 
 namespace User_Service.Controllers
 {
-    [Authorize(Roles = "Therapist")]
+    [Authorize(Roles = "SpeechTherapist")]
     [ApiController]
     [Route("api/[controller]")]
     public class ChildController : ControllerBase
@@ -26,7 +26,6 @@ namespace User_Service.Controllers
             {
                 FirstName = c.LastName,
                 LastName = c.FirstName,
-                Role = Role.Child,
                 Birthdate = c.Birthdate,
                 Archived = false
 
@@ -42,7 +41,6 @@ namespace User_Service.Controllers
             {
                 FirstName = c.LastName,
                 LastName = c.FirstName,
-                Role = Role.Child,
                 Birthdate = c.Birthdate,
                 Archived = false
 
