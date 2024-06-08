@@ -54,8 +54,8 @@ jobs:
       - name: Setup SonarQube
         uses: SonarSource/sonarcloud-github-action@v1
         with:
-          projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
-          token: ${{ secrets.SONAR_TOKEN }}
+          projectKey: "UserMicroservice"
+          token: "squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
 
       - name: Run SonarQube Analysis
         run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="http://localhost:9000"
