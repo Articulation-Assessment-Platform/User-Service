@@ -45,12 +45,7 @@ jobs:
   sonarqube:
     needs: test
     runs-on: ubuntu-latest
-
-    services:
-      docker:
-        image: docker:19.03.12
-        options: --privileged
-
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -80,7 +75,7 @@ jobs:
       run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
   docker:
-    needs: test
+    needs: sonarqube
     runs-on: ubuntu-latest
 
     services:
@@ -115,18 +110,8 @@ jobs:
     - name: Docker Compose Up
       run: docker-compose -f docker-compose.yml up -d
 
-    - name: Setup Kubectl
-      uses: azure/setup-kubectl@v1
-      with:
-        version: 'latest'
-
-    - name: Setup kubeconfig
-      run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
-
-    - name: Deploy to Kubernetes
-      run: kubectl apply -f k8s/deployment.yml
   kubernetes:
-    needs: test
+    needs: docker
     runs-on: ubuntu-latest
 
     services:
