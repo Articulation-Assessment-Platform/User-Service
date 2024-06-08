@@ -85,10 +85,10 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Docker Compose Build
-        run: docker-compose -f User Service/docker-compose.yml build
+        run: docker-compose -f "User Service/docker-compose.yml" build
 
       - name: Docker Compose Up
-        run: docker-compose -f User Service/docker-compose.yml up -d
+        run: docker-compose -f "User Service/docker-compose.yml" up -d
 
   kubernetes:
     needs: docker
