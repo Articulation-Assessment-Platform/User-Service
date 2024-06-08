@@ -47,9 +47,6 @@ namespace User_Service.Migrations
                     b.Property<int>("ParentId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("integer");
-
                     b.Property<int>("SpeechTherapistId")
                         .HasColumnType("integer");
 
@@ -82,9 +79,6 @@ namespace User_Service.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
                     b.ToTable("Parent");
@@ -109,9 +103,6 @@ namespace User_Service.Migrations
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("Role")
-                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

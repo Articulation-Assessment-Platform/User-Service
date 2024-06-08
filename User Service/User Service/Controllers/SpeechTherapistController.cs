@@ -10,7 +10,7 @@ namespace User_Service.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Roles = "Therapist")]
+    [Authorize(Roles = "SpeechTherapist")]
     public class SpeechTherapistController : ControllerBase
     {
         private readonly ISpeechTherapistService _speechTherapistService;
@@ -73,6 +73,31 @@ namespace User_Service.Controllers
             _speechTherapistService.RemoveAccount(Convert.ToInt32(userId));
 
             return Ok("User deleted successfully.");
+        }
+
+        [HttpPost("add")]
+        [AllowAnonymous]
+        public async Task<IActionResult> AddSpeechTherapist([FromBody] SpeechTherapistDTO model)
+        {
+            var speechTherapist = new SpeechTherapist
+            {
+                Email = model.Email,
+                FirstName = model.FirstName,
+                LastName = model.LastName
+            };
+            try
+            {
+                var user = await _speechTherapistService.AddSpeechTherapist(speechTherapist);
+                if (user == null)
+                {
+                    return NotFound("User not found");
+                }
+
+                return Ok(user);
+            }catch(Exception ex)
+            {
+                return BadRequest("Already a user with this information.");
+            }
         }
     }
 }

@@ -12,5 +12,6 @@ namespace User_Service.Service.Interfaces
 
 
         void RemoveAccount(int id);
+        Task<SpeechTherapist> AddSpeechTherapist(SpeechTherapist speechTherapist);
     }
 }

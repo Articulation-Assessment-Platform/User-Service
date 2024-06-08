@@ -20,6 +20,11 @@ namespace User_Service.Service
             return await _speechTherapistRepository.GetByIdAsync(id);
         }
 
+        public async Task<SpeechTherapist> AddSpeechTherapist(SpeechTherapist speechTherapist)
+        {
+            return await _speechTherapistRepository.AddAsync(speechTherapist);
+        }
+
 
         public void ModifyInformation(SpeechTherapist speechTherapist)
         {

@@ -12,8 +12,8 @@ using User_Service.Data;
 namespace User_Service.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20240529075020_LatestVersion")]
-    partial class LatestVersion
+    [Migration("20240605155617_InitalCreate")]
+    partial class InitalCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,9 +50,6 @@ namespace User_Service.Migrations
                     b.Property<int>("ParentId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("integer");
-
                     b.Property<int>("SpeechTherapistId")
                         .HasColumnType("integer");
 
@@ -85,9 +82,6 @@ namespace User_Service.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
                     b.ToTable("Parent");
@@ -112,9 +106,6 @@ namespace User_Service.Migrations
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("Role")
-                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
