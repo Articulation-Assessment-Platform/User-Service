@@ -59,7 +59,7 @@ jobs:
         architecture: 'x64'
 
     - name: Set JAVA_HOME
-      run: echo "JAVA_HOME=$(find /usr/lib/jvm -name 'java-11*' -type d)" >> $GITHUB_ENV
+      run: echo "JAVA_HOME=$(find /usr/lib/jvm -name 'java-17*' -type d)" >> $GITHUB_ENV
    
     - name: Check java
       run: java -version
