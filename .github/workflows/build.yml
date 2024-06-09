@@ -87,10 +87,10 @@ jobs:
         docker run \
           --network=bridge \
           -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli \
-          -Dsonar.projectKey="UserMicroservice" \
+          -Dsonar.projectKey=UserMicroservice \
           -Dsonar.sources=. \
           -Dsonar.host.url=http://192.168.2.7:9000 \
-          -Dsonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
+          -Dsonar.login=squ_6ded64fec6e02939b9b2b80bd1d62effff46f061
 
   docker:
     needs: test
