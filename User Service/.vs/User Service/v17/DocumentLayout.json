@@ -138,21 +138,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 233,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "User Service.http",
-              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\User Service.http",
-              "RelativeDocumentMoniker": "User Service\\User Service.http",
-              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\User Service.http",
-              "RelativeToolTip": "User Service\\User Service.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-05-29T07:51:12.239Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 20,
@@ -190,6 +177,32 @@
               "ViewState": "AQIAAAwAAAAAAAAAAIAwwCUAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-26T12:03:16.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChildController.cs",
+              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\ChildController.cs",
+              "RelativeDocumentMoniker": "User Service\\Controllers\\ChildController.cs",
+              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\ChildController.cs",
+              "RelativeToolTip": "User Service\\Controllers\\ChildController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAswBsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T15:07:16.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "User Service.http",
+              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\User Service.http",
+              "RelativeDocumentMoniker": "User Service\\User Service.http",
+              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\User Service.http",
+              "RelativeToolTip": "User Service\\User Service.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-05-29T07:51:12.239Z",
               "EditorCaption": ""
             },
             {
@@ -268,19 +281,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-26T11:12:04.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChildController.cs",
-              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\ChildController.cs",
-              "RelativeDocumentMoniker": "User Service\\Controllers\\ChildController.cs",
-              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\ChildController.cs",
-              "RelativeToolTip": "User Service\\Controllers\\ChildController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAswBsAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T15:07:16.805Z",
               "EditorCaption": ""
             },
             {
@@ -434,7 +434,7 @@
               "RelativeDocumentMoniker": "docker-compose.dcproj",
               "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\docker-compose.dcproj",
               "RelativeToolTip": "docker-compose.dcproj",
-              "ViewState": "AQIAAAYAAAAAAAAAAABEwAgAAAAqAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAABUwAgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-05-29T07:51:05.13Z",
               "EditorCaption": ""
