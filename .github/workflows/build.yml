@@ -55,7 +55,7 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.1.0 # Ex: v2.1.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
       with:
-        projectBaseDir: "./User Service/User Service"
+        projectBaseDir: .
       env:
         SONAR_TOKEN: "squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
 
