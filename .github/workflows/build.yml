@@ -48,7 +48,7 @@ jobs:
 
   sonarqube:
     runs-on: ubuntu-latest
-
+  
     steps:
     - name: Set up JDK 17
       uses: actions/setup-java@v2
@@ -57,33 +57,28 @@ jobs:
         distribution: 'adopt'
         java-package: 'jdk'
         architecture: 'x64'
-
+  
     - name: Set JAVA_HOME
-      run: "JAVA_HOME=$(find /usr/lib/jvm -name 'java-17*' -type d)" >> $GITHUB_ENV
-   
+      run: echo "JAVA_HOME=$(find /usr/lib/jvm -name 'java-17*' -type d)" >> $GITHUB_ENV
+  
     - name: Check JAVA_HOME
-      run: $JAVA_HOME
-
-      
+      run: echo $JAVA_HOME
+  
     - name: Setup SonarQube
       uses: SonarSource/sonarcloud-github-action@v1
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
-        java-version: '17'
-        jdkPath: ${{ env.JAVA_HOME }}/bin/java
-
+        projectBaseDir: .
+  
     - name: Run SonarQube Analysis
-      run: dotnet sonarscanner begin /k:"UserMicroservice" /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" /d:sonar.host.url="http://localhost:9000"
-
+      run: dotnet sonarscanner begin /k:"UserMicroservice" /d:sonar.login="${{ secrets.SONAR_LOGIN }}" /d:sonar.host.url="http://localhost:9000"
+  
     - name: Build for SonarQube
       run: dotnet build 'User Service/User Service/User Service.csproj'
-
+  
     - name: End SonarQube Analysis
-      run: dotnet sonarscanner end /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
-
-    - name: Run Docker Compose
-      run: docker-compose -f "User Service/docker-compose.yml" up -d
+      run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_LOGIN }}"
 
 
   docker:
