@@ -48,6 +48,8 @@ jobs:
       - name: Test 
         run: |
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release 
+          cd UserServiceTests
+          dotnet-coverage collect dotnet run
 
   sonarqube:
     needs: test
