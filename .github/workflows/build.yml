@@ -66,13 +66,13 @@ jobs:
     - name: Run SonarQube Analysis
       run: |
         docker run --rm -v ${GITHUB_WORKSPACE}:/usr/src/app \
-          -e SONAR_TOKEN=${{ secrets.SONAR_TOKEN }} \
+          -e SONAR_TOKEN="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" \
           -e JAVA_HOME=/usr/local/openjdk-17 \
           custom-sonar-scanner:latest sonar-scanner \
             -Dsonar.projectKey=UserMicroservice \
             -Dsonar.sources=. \
             -Dsonar.host.url=http://localhost:9000 \
-            -Dsonar.login=${{ secrets.SONAR_LOGIN }}
+            -Dsonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
   sonarqube:
     runs-on: ubuntu-latest
   
