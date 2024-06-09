@@ -1,7 +1,6 @@
 FROM maven:3.8.5-openjdk-17
 
-# Install any additional dependencies if needed
-# For example, install the SonarScanner CLI
+# Install dependencies and SonarScanner CLI
 RUN apt-get update && apt-get install -y wget unzip \
     && wget -O /tmp/sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip \
     && unzip /tmp/sonar-scanner-cli.zip -d /opt \
