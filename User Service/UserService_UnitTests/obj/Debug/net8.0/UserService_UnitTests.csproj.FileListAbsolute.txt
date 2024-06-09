@@ -135,3 +135,9 @@ C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserSe
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserService_UnitTests\obj\Debug\net8.0\UserService_UnitTests.pdb
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserService_UnitTests\obj\Debug\net8.0\UserService_UnitTests.genruntimeconfig.cache
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserService_UnitTests\obj\Debug\net8.0\ref\UserService_UnitTests.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserService_UnitTests\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserService_UnitTests\bin\Debug\net8.0\Moq.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserService_UnitTests\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserService_UnitTests\bin\Debug\net8.0\xunit.assert.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserService_UnitTests\bin\Debug\net8.0\xunit.core.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\UserService_UnitTests\bin\Debug\net8.0\xunit.execution.dotnet.dll
