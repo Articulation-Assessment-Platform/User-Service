@@ -54,6 +54,8 @@ jobs:
         fetch-depth: 0
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.1.0 # Ex: v2.1.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
+      with:
+        projectBaseDir: 'User Service/User Service/User Service.csproj'
       env:
         SONAR_TOKEN: "squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
   
@@ -135,9 +137,9 @@ jobs:
       run: echo $JAVA_HOME
   
     - name: Setup SonarQube
-      uses: SonarSource/sonarcloud-github-action@v1
+      uses: SonarSource/sonarcloud-github-action@v2.1.0
       env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_TOKEN: "squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
       with:
         projectBaseDir: .
   
