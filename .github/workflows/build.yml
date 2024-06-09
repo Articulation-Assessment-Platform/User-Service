@@ -47,51 +47,47 @@ jobs:
         run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
 
   sonarqube:
-    runs-on: ubuntu-latest
-  
+    name: Build and analyze
+    runs-on: windows-latest
     steps:
-    - name: Setup SonarQube
-      uses: SonarSource/sonarcloud-github-action@v2.1.0
-      env:
-        SONAR_TOKEN: sqp_06c22408725a5250778f8e24a3f7286ecd3bdf4e
-      with:
-        projectBaseDir: .
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'zulu' # Alternative distribution options are available.
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~\sonar\cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache SonarCloud scanner
+        id: cache-sonar-scanner
+        uses: actions/cache@v3
+        with:
+          path: .\.sonar\scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
+      - name: Install SonarCloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        shell: powershell
+        run: |
+          New-Item -Path .\.sonar\scanner -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        shell: powershell
+        run: |
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet clean 'User Service/User Service/User Service.csproj'
+          dotnet build 'User Service/User Service/User Service.csproj'
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
   
-    - name: Run SonarQube Analysis
-      run: dotnet sonarscanner begin /k:"UserMicroservice" /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" /d:sonar.host.url="https://sonarcloud.io"
-  
-    - name: Build for SonarQube
-      run: dotnet build 'User Service/User Service/User Service.csproj'
-  
-    - name: End SonarQube Analysis
-      run: dotnet sonarscanner end /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
-  sonarqube_scan:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Start SonarQube Server
-      run: |
-        docker run -d --name sonarqube \
-          --network=bridge \
-          -p 9000:9000 \
-          sonarqube:community
-
-    - name: Wait for SonarQube Server to Start
-      run: sleep 30s
-
-    - name: Run SonarScanner
-      run: |
-        docker run \
-          --network=bridge \
-          -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli \
-          -Dsonar.projectKey=UserMicroservice \
-          -Dsonar.sources=. \
-          -Dsonar.host.url=http://192.168.2.7:9000 \
-          -Dsonar.login=squ_6ded64fec6e02939b9b2b80bd1d62effff46f061
-
   docker:
     needs: test
     runs-on: ubuntu-latest
