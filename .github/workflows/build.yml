@@ -41,10 +41,10 @@ jobs:
           dotnet-version: 6.x
 
       - name: Restore dependencies
-        run: dotnet restore "User Service/User Service/User Service.csproj"
+        run: dotnet restore "UserServiceTests/UserServiceTests.csproj"
 
       - name: Test
-        run: dotnet test 'User Service/UserServiceTests/UserServiceTests.csproj' --no-build --verbosity normal  
+        run: dotnet test 'UserServiceTests/UserServiceTests.csproj' --no-build --verbosity normal  
 
   sonarqube:
     needs: test
