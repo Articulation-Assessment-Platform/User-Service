@@ -41,10 +41,10 @@ jobs:
           dotnet-version: 6.x
 
       - name: Restore dependencies
-        run: dotnet restore "User Service/User Service/User Service.csproj"
+        run: dotnet restore "UserServiceTests/UserServiceTests.csproj"
 
       - name: Test
-        run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
+        run: dotnet test 'UserServiceTests/UserServiceTests.csproj' --no-build --verbosity normal  
 
   sonarqube:
     needs: test
@@ -88,10 +88,11 @@ jobs:
           dotnet restore "User Service/User Service/User Service.csproj"
           dotnet clean 'User Service/User Service/User Service.csproj'
           dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
+          dotnet test 'UserServiceTests/UserServiceTests.csproj' --no-build --verbosity normal  
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
   
   docker:
-    needs: test
+    needs: sonarqube
     runs-on: ubuntu-latest
 
     steps:
