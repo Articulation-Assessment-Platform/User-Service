@@ -45,19 +45,24 @@ jobs:
 
       - name: Test
         run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
-  sonarcloud:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
-    - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@v2.1.0 # Ex: v2.1.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
-      with:
-        projectBaseDir: .
-      env:
-        SONAR_TOKEN: "sqp_06c22408725a5250778f8e24a3f7286ecd3bdf4e"
+      
+      
+      - name: Sonar Scan
+        # You may pin to the exact commit or the version.
+        # uses: sijomc/sonarscan-action@5a3a0c0eacbe76ac7c3e3513696f7449f4f914a5
+        uses: sijomc/sonarscan-action@1.1
+        with:
+          # SonarQube server URL
+          host: "http://localhost:9000"
+          # The project's unique key. Allowed characters are: letters, numbers, -, _, . and :, with at least one non-digit.
+          projectKey: "UserMicroservice"
+          # Name of the project that will be displayed on the web interface.
+          projectName: "User"
+          # The project version.
+          login:  "admin"
+          # Password that goes with the sonar.login username. This should be left blank if an authentication token is being used.
+          password: "Password_sonarqube"
+          
 
   sonarqube:
     runs-on: ubuntu-latest
