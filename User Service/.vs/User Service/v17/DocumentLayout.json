@@ -3,8 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{358D3D83-A72F-4150-B09E-2FA10AE537C8}|UserService_UnitTests\\UserService_UnitTests.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\userservice_unittests\\servicetests\\speechtherapistservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{358D3D83-A72F-4150-B09E-2FA10AE537C8}|UserService_UnitTests\\UserService_UnitTests.csproj|solutionrelative:userservice_unittests\\servicetests\\speechtherapistservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED646CA0-D5CD-4AB4-8079-79629BB26BF8}|..\\UserServiceTests\\UserServiceTests.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\userservicetests\\servicetests\\speechtherapistservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED646CA0-D5CD-4AB4-8079-79629BB26BF8}|..\\UserServiceTests\\UserServiceTests.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\userservicetests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\service\\speechtherapistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,10 +85,6 @@
       "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{358D3D83-A72F-4150-B09E-2FA10AE537C8}|UserService_UnitTests\\UserService_UnitTests.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\userservice_unittests\\visualstudio.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{358D3D83-A72F-4150-B09E-2FA10AE537C8}|UserService_UnitTests\\UserService_UnitTests.csproj|solutionrelative:userservice_unittests\\visualstudio.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\visualstudio.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\visualstudio.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -146,7 +144,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "SpeechTherapistService.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Service\\SpeechTherapistService.cs",
               "RelativeDocumentMoniker": "User Service\\Service\\SpeechTherapistService.cs",
@@ -172,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ISpeechTherapistService.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Service\\Interfaces\\ISpeechTherapistService.cs",
               "RelativeDocumentMoniker": "User Service\\Service\\Interfaces\\ISpeechTherapistService.cs",
@@ -185,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Program.cs",
               "RelativeDocumentMoniker": "User Service\\Program.cs",
@@ -198,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ChildController.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\ChildController.cs",
               "RelativeDocumentMoniker": "User Service\\Controllers\\ChildController.cs",
@@ -224,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "BaseRepository.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Repository\\BaseRepository.cs",
               "RelativeDocumentMoniker": "User Service\\Repository\\BaseRepository.cs",
@@ -237,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SpeechTherapist.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\SpeechTherapist.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\SpeechTherapist.cs",
@@ -250,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "UserContext.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Data\\UserContext.cs",
               "RelativeDocumentMoniker": "User Service\\Data\\UserContext.cs",
@@ -263,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\User.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\User.cs",
@@ -276,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Child.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\Child.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\Child.cs",
@@ -289,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Parent.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\Parent.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\Parent.cs",
@@ -302,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Dockerfile",
               "RelativeDocumentMoniker": "User Service\\Dockerfile",
@@ -315,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\Role.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\Role.cs",
@@ -328,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SpeechTherapistController.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\SpeechTherapistController.cs",
               "RelativeDocumentMoniker": "User Service\\Controllers\\SpeechTherapistController.cs",
@@ -341,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ChildDTO.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\DTO\\ChildDTO.cs",
               "RelativeDocumentMoniker": "User Service\\DTO\\ChildDTO.cs",
@@ -354,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\DTO\\UserDTO.cs",
               "RelativeDocumentMoniker": "User Service\\DTO\\UserDTO.cs",
@@ -367,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "User Service\\Properties\\launchSettings.json",
@@ -380,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
@@ -393,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ParentController.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\ParentController.cs",
               "RelativeDocumentMoniker": "User Service\\Controllers\\ParentController.cs",
@@ -406,20 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "VisualStudio.gitignore",
-              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\UserService_UnitTests\\VisualStudio.gitignore",
-              "RelativeDocumentMoniker": "UserService_UnitTests\\VisualStudio.gitignore",
-              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\UserService_UnitTests\\VisualStudio.gitignore",
-              "RelativeToolTip": "UserService_UnitTests\\VisualStudio.gitignore",
-              "ViewState": "AQIAAAUBAAAAAAAAAAAWwBkBAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-29T07:51:18.069Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "docker-compose.override.yml",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\docker-compose.override.yml",
               "RelativeDocumentMoniker": "docker-compose.override.yml",
@@ -570,13 +555,26 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "SpeechTherapistServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\UserService_UnitTests\\ServiceTests\\SpeechTherapistServiceTests.cs",
-              "RelativeDocumentMoniker": "UserService_UnitTests\\ServiceTests\\SpeechTherapistServiceTests.cs",
-              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\UserService_UnitTests\\ServiceTests\\SpeechTherapistServiceTests.cs",
-              "RelativeToolTip": "UserService_UnitTests\\ServiceTests\\SpeechTherapistServiceTests.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAADEAAAAtAAAA",
+              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\UserServiceTests\\ServiceTests\\SpeechTherapistServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\UserServiceTests\\ServiceTests\\SpeechTherapistServiceTests.cs",
+              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\UserServiceTests\\ServiceTests\\SpeechTherapistServiceTests.cs",
+              "RelativeToolTip": "..\\UserServiceTests\\ServiceTests\\SpeechTherapistServiceTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T09:18:44.451Z",
+              "WhenOpened": "2024-06-09T09:28:32.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\UserServiceTests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "..\\UserServiceTests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\UserServiceTests\\UnitTest1.cs",
+              "RelativeToolTip": "..\\UserServiceTests\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T09:28:20.973Z",
               "EditorCaption": ""
             }
           ]
