@@ -45,7 +45,34 @@ jobs:
 
       - name: Test
         run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
+  soanr:
+    runs-on: ubuntu-latest
 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17'
+        distribution: 'adopt'
+        java-package: 'jdk'
+        architecture: 'x64'
+
+    - name: Build Docker image
+      run: docker build -t custom-sonar-scanner:latest .
+
+    - name: Run SonarQube Analysis
+      run: |
+        docker run --rm -v ${GITHUB_WORKSPACE}:/usr/src/app \
+          -e SONAR_TOKEN=${{ secrets.SONAR_TOKEN }} \
+          -e JAVA_HOME=/usr/local/openjdk-17 \
+          custom-sonar-scanner:latest sonar-scanner \
+            -Dsonar.projectKey=UserMicroservice \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=http://localhost:9000 \
+            -Dsonar.login=${{ secrets.SONAR_LOGIN }}
   sonarqube:
     runs-on: ubuntu-latest
   
@@ -72,13 +99,13 @@ jobs:
         projectBaseDir: .
   
     - name: Run SonarQube Analysis
-      run: dotnet sonarscanner begin /k:"UserMicroservice" /d:sonar.login="${{ secrets.SONAR_LOGIN }}" /d:sonar.host.url="http://localhost:9000"
+      run: dotnet sonarscanner begin /k:"UserMicroservice" /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" /d:sonar.host.url="http://localhost:9000"
   
     - name: Build for SonarQube
       run: dotnet build 'User Service/User Service/User Service.csproj'
   
     - name: End SonarQube Analysis
-      run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_LOGIN }}"
+      run: dotnet sonarscanner end /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
 
 
   docker:
