@@ -57,7 +57,7 @@ jobs:
       with:
         projectBaseDir: .
       env:
-        SONAR_TOKEN: "squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
+        SONAR_TOKEN: "sqp_06c22408725a5250778f8e24a3f7286ecd3bdf4e"
 
   sonarqube:
     runs-on: ubuntu-latest
@@ -66,7 +66,7 @@ jobs:
     - name: Setup SonarQube
       uses: SonarSource/sonarcloud-github-action@v2.1.0
       env:
-        SONAR_TOKEN: "squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
+        SONAR_TOKEN: sqp_06c22408725a5250778f8e24a3f7286ecd3bdf4e
       with:
         projectBaseDir: .
   
