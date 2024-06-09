@@ -58,7 +58,7 @@ jobs:
         projectBaseDir: .
   
     - name: Run SonarQube Analysis
-      run: dotnet sonarscanner begin /k:"UserMicroservice" /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" /d:sonar.host.url="http://localhost:9000"
+      run: dotnet sonarscanner begin /k:"UserMicroservice" /d:sonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" /d:sonar.host.url="https://sonarcloud.io"
   
     - name: Build for SonarQube
       run: dotnet build 'User Service/User Service/User Service.csproj'
@@ -76,7 +76,7 @@ jobs:
       uses: sonarsource/sonarqube-scan-action@v2.1.0 # Ex: v2.1.0, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
       env:
         SONAR_TOKEN: "squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
-        SONAR_HOST_URL: "http://localhost:9000"
+        SONAR_HOST_URL: "https://sonarcloud.io"
 
   docker:
     needs: test
