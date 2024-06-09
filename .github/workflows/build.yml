@@ -123,9 +123,15 @@ jobs:
       - name: Docker Compose Build
         run: docker-compose -f "User Service/docker-compose.yml" build
 
+      - name: Tag Docker Image
+        run: docker tag user-service:latest ${{ secrets.DOCKER_USERNAME }}/user-service:latest
+
+      - name: Push Docker Image to Registry
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/user-service:latest
+
       - name: Docker Compose Up
         run: docker-compose -f "User Service/docker-compose.yml" up -d
-
+  
   kubernetes:
     needs: docker
     runs-on: ubuntu-latest
@@ -142,5 +148,7 @@ jobs:
       - name: Setup kubeconfig
         run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
 
-      - name: Deploy to Kubernetes
-        run: kubectl apply -f k8s/deployment.yml
+      - name: Update Kubernetes Deployment
+        run: |
+          kubectl set image deployment/user-service user-service=${{ secrets.DOCKER_USERNAME }}/user-service:latest
+          kubectl apply -f k8s/deployment.yml
