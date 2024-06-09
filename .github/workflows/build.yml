@@ -43,8 +43,13 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore "UserServiceTests/UserServiceTests.csproj"
 
-      - name: Test
-        run: dotnet test 'UserServiceTests/UserServiceTests.csproj' --no-build --verbosity normal  
+
+      - name: Test with Coverage
+        run: |
+          dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+          mkdir coverage-reports
+          dotnet reportgenerator -reports:**/coverage.opencover.xml -targetdir:coverage-reports -reporttypes:HtmlInline_AzurePipelines
+
 
   sonarqube:
     needs: test
