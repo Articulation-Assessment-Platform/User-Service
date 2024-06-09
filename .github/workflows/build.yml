@@ -28,6 +28,7 @@ jobs:
         run: dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -46,6 +47,8 @@ jobs:
       - name: Test 
         run: |
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release --collect "Code Coverage"
+          cd "User Service/User Service"
+          dotnet-coverage collect dotnet run
   
   sonarqube:
     needs: test
