@@ -45,7 +45,7 @@ jobs:
 
       - name: Test
         run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
-  soanr:
+  sonar:
     runs-on: ubuntu-latest
 
     steps:
@@ -61,18 +61,28 @@ jobs:
         architecture: 'x64'
 
     - name: Build Docker image
-      run: docker build -t custom-sonar-scanner:latest .
+      run: docker build -t custom-sonar-scanner:latest -f docker/Dockerfile .
 
     - name: Run SonarQube Analysis
       run: |
         docker run --rm -v ${GITHUB_WORKSPACE}:/usr/src/app \
-          -e SONAR_TOKEN="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" \
+          -e SONAR_TOKEN=${{ secrets.SONAR_TOKEN }} \
           -e JAVA_HOME=/usr/local/openjdk-17 \
           custom-sonar-scanner:latest sonar-scanner \
             -Dsonar.projectKey=UserMicroservice \
             -Dsonar.sources=. \
             -Dsonar.host.url=http://localhost:9000 \
-            -Dsonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
+    - name: Build for SonarQube
+      run: dotnet build 'User Service/User Service/User Service.csproj'
+
+    - name: End SonarQube Analysis
+      run: docker run --rm -v ${GITHUB_WORKSPACE}:/usr/src/app \
+          -e SONAR_TOKEN=${{ secrets.SONAR_TOKEN }} \
+          -e JAVA_HOME=/usr/local/openjdk-17 \
+          custom-sonar-scanner:latest sonar-scanner \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
   sonarqube:
     runs-on: ubuntu-latest
   
