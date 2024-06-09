@@ -107,6 +107,7 @@ jobs:
           dotnet restore "User Service/User Service/User Service.csproj"
           dotnet clean 'User Service/User Service/User Service.csproj'
           dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
+          dotnet test 'User Service/User Service/User Service.csproj' --collect "Code Coverage"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 
   
