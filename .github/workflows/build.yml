@@ -92,13 +92,12 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
-          dotnet restore "User Service/User Service/User Service.csproj"
-          dotnet clean 'User Service/User Service/User Service.csproj'
-          dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
-          dotnet test 'UserServiceTests/UserServiceTests.csproj' --collect "Code Coverage"
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-
+          dotnet sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service"
+              /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+              /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+          dotnet build 'User Service/User Service/User Service.csproj' --no-incremental
+          dotnet-coverage collect "dotnet test" -f xml -o "coverage.xml"
+          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
   
   docker:
     needs: sonarqube
