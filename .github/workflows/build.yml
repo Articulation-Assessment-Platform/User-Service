@@ -27,7 +27,6 @@ jobs:
       - name: Build
         run: dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
   test:
-    needs: build
     runs-on: ubuntu-latest
   
     steps:
@@ -48,6 +47,8 @@ jobs:
       - name: Test 
         run: |
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release 
+          cd UserServiceTests
+          dotnet-coverage collect dotnet run
 
   sonarqube:
     needs: test
@@ -92,13 +93,12 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          dotnet sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service"
-              /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-              /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
-          dotnet build 'User Service/User Service/User Service.csproj' --no-incremental
-          dotnet-coverage collect "dotnet test" -f xml -o "coverage.xml"
-          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-  
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="UserServiceTests/output.coverage"
+          dotnet restore "User Service/User Service/User Service.csproj"
+          dotnet clean 'User Service/User Service/User Service.csproj'
+          dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
+          dotnet test 'UserServiceTests/UserServiceTests.csproj' --collect "Code Coverage"
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
   docker:
     needs: sonarqube
     runs-on: ubuntu-latest
