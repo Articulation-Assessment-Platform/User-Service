@@ -28,7 +28,6 @@ jobs:
         run: dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
   test:
     runs-on: ubuntu-latest
-  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -46,8 +45,8 @@ jobs:
   
       - name: Test 
         run: |
-          dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release 
-
+          dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release --collect "Code Coverage"
+  
   sonarqube:
     needs: test
     name: Build and analyze
@@ -59,14 +58,15 @@ jobs:
           java-version: 17
           distribution: 'zulu' # Alternative distribution options are available.
   
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
   
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
-          path: ~\sonar\cache
+          path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
   
@@ -74,7 +74,7 @@ jobs:
         id: cache-sonar-scanner
         uses: actions/cache@v3
         with:
-          path: .\.sonar\scanner
+          path: ./.sonar/scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
   
@@ -82,8 +82,8 @@ jobs:
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
         run: |
-          New-Item -Path .\.sonar\scanner -ItemType Directory
-          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+          New-Item -Path ./.sonar/scanner -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
   
       - name: Build and analyze
         env:
@@ -91,12 +91,12 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="UserServiceTests/output.coverage"
+          ./.sonar/scanner/dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="UserServiceTests/output.coverage"
           dotnet restore "User Service/User Service/User Service.csproj"
           dotnet clean 'User Service/User Service/User Service.csproj'
           dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
-          dotnet test 'UserServiceTests/UserServiceTests.csproj' --collect "Code Coverage"
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+
   docker:
     needs: sonarqube
     runs-on: ubuntu-latest
