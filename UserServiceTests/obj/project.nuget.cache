@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "BL09cUeB4xsemhtLMb4LXoHg4velTjbeQccnGtzPm1q766RCK8qdlZFcbwYVSxQiCfqVJzWTYWBEkhSXxLKfqg==",
+  "dgSpecHash": "MEMpU3pCjuYusHtZCIPGpoNQzFU81Znw7rJinINmUm+8sllsYDu2PaQvYZI95IRQ/2f/P2SNhWn36eJbhd9UUg==",
   "success": true,
   "projectFilePath": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\UserServiceTests\\UserServiceTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maike\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\maike\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\maike\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.6\\microsoft.aspnetcore.authentication.jwtbearer.8.0.6.nupkg.sha512",
-    "C:\\Users\\maike\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
+    "C:\\Users\\maike\\.nuget\\packages\\microsoft.codecoverage\\17.10.0\\microsoft.codecoverage.17.10.0.nupkg.sha512",
     "C:\\Users\\maike\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.4\\microsoft.entityframeworkcore.8.0.4.nupkg.sha512",
     "C:\\Users\\maike\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.4\\microsoft.entityframeworkcore.abstractions.8.0.4.nupkg.sha512",
     "C:\\Users\\maike\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.4\\microsoft.entityframeworkcore.analyzers.8.0.4.nupkg.sha512",
