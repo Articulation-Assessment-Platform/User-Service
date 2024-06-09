@@ -26,28 +26,28 @@ jobs:
 
       - name: Build
         run: dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
-
   test:
     needs: build
     runs-on: ubuntu-latest
-
+  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+  
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.x
-
+  
       - name: Restore dependencies
         run: dotnet restore "UserServiceTests/UserServiceTests.csproj"
-
-      - name: Test with Coverage
+  
+      - name: Install ReportGenerator
+        run: dotnet tool install dotnet-reportgenerator-globaltool --tool-path .
+  
+      - name: Test 
         run: |
-          dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
-          mkdir coverage-reports
-          dotnet reportgenerator -reports:**/coverage.opencover.xml -targetdir:coverage-reports -reporttypes:HtmlInline_AzurePipelines
+          dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release 
 
   sonarqube:
     needs: test
@@ -92,13 +92,12 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
-          dotnet restore "User Service/User Service/User Service.csproj"
-          dotnet clean 'User Service/User Service/User Service.csproj'
-          dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
-          dotnet test 'UserServiceTests/UserServiceTests.csproj' --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-
+          dotnet sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service"
+              /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+              /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+          dotnet build 'User Service/User Service/User Service.csproj' --no-incremental
+          dotnet-coverage collect "dotnet test" -f xml -o "coverage.xml"
+          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
   
   docker:
     needs: sonarqube
