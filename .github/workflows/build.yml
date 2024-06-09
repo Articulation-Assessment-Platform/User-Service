@@ -45,6 +45,27 @@ jobs:
 
       - name: Test
         run: dotnet test 'User Service/User Service/User Service.csproj' --no-build --verbosity normal  
+  qube:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      - name: Build and analyze with SonarQube
+        env:
+          SONAR_TOKEN: "squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
+          SONAR_HOST_URL: "http://localhost:9000"
+        run: |
+          ./gradlew build
+          ./gradlew sonarqube
+  
   sonar:
     runs-on: ubuntu-latest
 
@@ -72,17 +93,17 @@ jobs:
             -Dsonar.projectKey=UserMicroservice \
             -Dsonar.sources=. \
             -Dsonar.host.url=http://localhost:9000 \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061"
 
     - name: Build for SonarQube
       run: dotnet build 'User Service/User Service/User Service.csproj'
 
     - name: End SonarQube Analysis
       run: docker run --rm -v ${GITHUB_WORKSPACE}:/usr/src/app \
-          -e SONAR_TOKEN=${{ secrets.SONAR_TOKEN }} \
+          -e SONAR_TOKEN="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" \
           -e JAVA_HOME=/usr/local/openjdk-17 \
           custom-sonar-scanner:latest sonar-scanner \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
+            -Dsonar.login="squ_6ded64fec6e02939b9b2b80bd1d62effff46f061" -X
   sonarqube:
     runs-on: ubuntu-latest
   
