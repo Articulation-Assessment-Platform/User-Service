@@ -89,12 +89,12 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
           dotnet restore "User Service/User Service/User Service.csproj"
           dotnet clean 'User Service/User Service/User Service.csproj'
           dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.coverageReportPaths="**/coverage.opencover.xml"
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 
   
   docker:
