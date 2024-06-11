@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User Service", "User Servic
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A7BA72F7-C492-4EC0-BB9B-CB982E4D79B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserServiceTests", "..\UserServiceTests\UserServiceTests.csproj", "{ED646CA0-D5CD-4AB4-8079-79629BB26BF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserServiceTests", "..\UserServiceTests\UserServiceTests.csproj", "{ED646CA0-D5CD-4AB4-8079-79629BB26BF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
