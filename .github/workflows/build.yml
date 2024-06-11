@@ -51,7 +51,6 @@ jobs:
           dotnet reportgenerator -reports:UserServiceTests/output.coverage -targetdir:User Service/User Service
 
   sonarqube:
-    needs: test
     name: Build and analyze
     runs-on: windows-latest
     steps:
