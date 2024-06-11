@@ -44,12 +44,10 @@ jobs:
       - name: Install ReportGenerator
         run: dotnet tool install dotnet-reportgenerator-globaltool --tool-path .
   
-      - name: Test 
+      - name: Test and collect coverage
         run: |
+          dotnet tool install -g dotnet-reportgenerator-globaltool
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release --collect "Code Coverage"
-          cd "User Service/User Service"
-          dotnet-coverage collect dotnet run
-  
   sonarqube:
     needs: test
     name: Build and analyze
@@ -94,55 +92,55 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          ./.sonar/scanner/dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="User Service/User Service/output.coverage"
+          ./.sonar/scanner/dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token=${{ secrets.SONAR_TOKEN }} /d:sonar.host.url="https://sonarcloud.io" 
           dotnet restore "User Service/User Service/User Service.csproj"
           dotnet clean 'User Service/User Service/User Service.csproj'
           dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
-          ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          dotnet test 'UserServiceTests/UserServiceTests.csproj' --collect "Code Coverage"
+          ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token=${{ secrets.SONAR_TOKEN }}
 
   docker:
     needs: sonarqube
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 6.x
-
-      - name: Restore dependencies
-        run: dotnet restore 'User Service/User Service/User Service.csproj'
-
-      - name: Docker Login
+  
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+  
+      - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        
+  
       - name: Create Docker network
         run: docker network create backend
-
-      - name: Docker Compose Build
+  
+      - name: Build Docker Compose services
         run: docker-compose -f "User Service/docker-compose.yml" build
-
-      - name: Docker Compose Up
-        run: docker-compose -f "User Service/docker-compose.yml" up -d
-
-  kubernetes:
+  
+      - name: Publish Docker images
+        run: |
+          docker tag userservice:latest 11112002/userservice:latest
+          docker push 11112002/userservice:latest
+  
+      - name: Clean up Docker containers
+        run: docker-compose -f "User Service/docker-compose.yml" down
+  
+  deploy:
     needs: docker
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Azure Login
+        run: az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
 
-      - name: Setup Kubectl
-        uses: azure/setup-kubectl@v1
-        with:
-          version: 'latest'
+      - name: Set Kubeconfig
+        run: az aks get-credentials --resource-group 'Articulation-Assessment-Platform' --name 'aks-articulation'
 
-      - name: Setup kubeconfig
-        run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
-
-      - name: Deploy to Kubernetes
-        run: kubectl apply -f k8s/deployment.yml
+      - name: Apply Kubernetes manifests
+        run: |
+          kubectl apply -f "User Service/User Service/deployment.yml"
+          kubectl apply -f "User Service/User Service/service.yml"
