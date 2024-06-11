@@ -128,23 +128,24 @@ jobs:
       - name: Clean up Docker containers
         run: docker-compose -f "User Service/docker-compose.yml" down
   
-  kubernetes:
+  deploy:
     needs: docker
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Setup Kubectl
-        uses: azure/setup-kubectl@v1
+      - name: Azure Login
+        uses: azure/login@v1
         with:
-          version: 'latest'
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Setup kubeconfig
-        run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+      - name: Set Kubeconfig
+        uses: Azure/k8s-set-context@v1
+        with:
+          kubeconfig: ${{ secrets.KUBE_CONFIG_DATA }}
 
-      - name: Update Kubernetes Deployment
+      - name: Apply Kubernetes manifests
         run: |
-          kubectl set image deployment/user-service user-service=${{ secrets.DOCKER_USERNAME }}/user-service:latest
-          kubectl apply -f k8s/deployment.yml
+          kubectl apply -f "User Service/User Service/deployment.yml"
+          kubectl apply -f "User Service/User Service/service.yml"
