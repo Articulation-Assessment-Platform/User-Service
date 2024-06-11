@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   userservice:
-    image: 11112002/userservice:latest
+    image: userservice:latest
     networks:
       - backend
     build:
