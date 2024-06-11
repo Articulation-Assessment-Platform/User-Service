@@ -11,7 +11,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["User Service/User Service.csproj", "User Service/"]
 RUN dotnet restore "./User Service/User Service.csproj"
-COPY . .
+COPY "./User Service/User Service.csproj"
 WORKDIR "/src/User Service"
 RUN dotnet build "./User Service.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
