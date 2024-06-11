@@ -47,7 +47,8 @@ jobs:
       - name: Test and collect coverage
         run: |
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release --collect "Code Coverage"
-  
+          dotnet reportgenerator -reports:UserServiceTests/output.coverage -targetdir:User Service/User Service
+
   sonarqube:
     needs: test
     name: Build and analyze
