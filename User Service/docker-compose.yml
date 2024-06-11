@@ -1,8 +1,8 @@
-version: '3.4'
+version: '3.8'
 
 services:
   userservice:
-    image: ${DOCKER_REGISTRY-}userservice
+    image: 11112002/userservice:latest
     networks:
       - backend
     build:
