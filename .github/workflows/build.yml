@@ -97,7 +97,7 @@ jobs:
           dotnet restore "User Service/User Service/User Service.csproj"
           dotnet clean 'User Service/User Service/User Service.csproj'
           dotnet build 'User Service/User Service/User Service.csproj' --no-restore --configuration Release
-          dotnet test 'UserServiceTests/UserServiceTests.csproj' --collect:"XPlat Code Coverage" --settings coverlet.runsettings /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=coverage.xml
+          dotnet test 'UserServiceTests/UserServiceTests.csproj' --collect "Code Coverage"
           ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token=${{ secrets.SONAR_TOKEN }}
 
   docker:
