@@ -46,6 +46,7 @@ jobs:
   
       - name: Test and collect coverage
         run: |
+          dotnet tool install -g dotnet-reportgenerator-globaltool
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release --collect "Code Coverage"
           dotnet reportgenerator -reports:UserServiceTests/output.coverage -targetdir:User Service/User Service
 
