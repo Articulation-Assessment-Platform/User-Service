@@ -125,3 +125,4 @@ C:\Users\maike\Articulation-Assessment-Platform\User-Service\UserServiceTests\ob
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\UserServiceTests\obj\Debug\net8.0\UserServiceTests.pdb
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\UserServiceTests\obj\Debug\net8.0\UserServiceTests.genruntimeconfig.cache
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\UserServiceTests\obj\Debug\net8.0\ref\UserServiceTests.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\UserServiceTests\bin\Debug\net8.0\.msCoverageSourceRootsMapping_UserServiceTests

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: userservice-deployment
+spec:
+  replicas: 1   # Adjust as needed
+  selector:
+    matchLabels:
+      app: userservice
+  template:
+    metadata:
+      labels:
+        app: userservice
+    spec:
+      containers:
+      - name: userservice
+        image: ${DOCKER_REGISTRY-}userservice
+        ports:
+        - containerPort: 5110
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+        - name: ASPNETCORE_HTTP_PORTS
+          value: "5110"
+        volumeMounts:
+        - name: secrets-volume
+          mountPath: /home/app/.microsoft/usersecrets
+          readOnly: true
+        - name: https-volume
+          mountPath: /home/app/.aspnet/https
+          readOnly: true
+      volumes:
+      - name: secrets-volume
+        hostPath:
+          path: ${APPDATA}/Microsoft/UserSecrets
+      - name: https-volume
+        hostPath:
+          path: ${APPDATA}/ASP.NET/Https
