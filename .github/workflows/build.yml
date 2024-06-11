@@ -120,8 +120,8 @@ jobs:
   
       - name: Publish Docker images
         run: |
-          docker tag user_service:latest 11112002/user_service:latest
-          docker push 11112002/user_service:latest
+          docker tag user_service:latest 11112002/userservice:latest
+          docker push 11112002/userservice:latest
   
       - name: Clean up Docker containers
         run: docker-compose -f "User Service/docker-compose.yml" down
