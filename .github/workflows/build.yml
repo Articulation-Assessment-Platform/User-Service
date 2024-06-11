@@ -135,14 +135,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Azure Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        run: az login -u ${{ secrets.AZURE_AD_USER }} -p ${{ secrets.AZURE_PASSWORD }}
 
       - name: Set Kubeconfig
-        uses: Azure/k8s-set-context@v1
-        with:
-          kubeconfig: ${{ secrets.KUBE_CONFIG_DATA }}
+        run: az aks get-credentials --resource-group 'Articulation-Assessment-Platform' --name 'aks-articulation'
 
       - name: Apply Kubernetes manifests
         run: |
