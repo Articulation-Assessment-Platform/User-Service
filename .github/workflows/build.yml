@@ -100,7 +100,6 @@ jobs:
           ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token=${ secrets.SONAR_TOKEN }
 
   docker:
-    needs: sonarqube
     runs-on: ubuntu-latest
 
     steps:
