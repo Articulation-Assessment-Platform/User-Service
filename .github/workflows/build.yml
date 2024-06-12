@@ -140,5 +140,4 @@ jobs:
 
       - name: Apply Kubernetes manifests
         run: |
-          kubectl apply -f "User Service/User Service/deployment.yml"
-          kubectl apply -f "User Service/User Service/service.yml"
+          kubectl apply -f "User Service/User Service/aks-manifest.yml"
