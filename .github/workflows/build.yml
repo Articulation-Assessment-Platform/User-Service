@@ -50,7 +50,6 @@ jobs:
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --configuration Release --collect "Code Coverage"
   sonarqube:
     needs: test
-    name: Build and analyze
     runs-on: windows-latest
     steps:
       - name: Set up JDK 17
@@ -58,19 +57,19 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu' # Alternative distribution options are available.
-  
+
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-  
+
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-  
+
       - name: Cache SonarCloud scanner
         id: cache-sonar-scanner
         uses: actions/cache@v3
@@ -78,25 +77,38 @@ jobs:
           path: ./.sonar/scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
-  
+
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
         run: |
           New-Item -Path ./.sonar/scanner -ItemType Directory
-          dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
-  
+          dotnet tool install dotnet-sonarscanner --tool-path ./.sonar/scanner
+
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          ./.sonar/scanner/dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token=${{ secrets.SONAR_TOKEN }} /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths="UserServiceTests/TestResults/ed1cd3c2-257d-42fa-a63c-47a366a5598e/maike_LAPTOP-OBMJ3NBG_2024-06-11.13_31_22.coverage"
+          ./.sonar/scanner/dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token=${{ secrets.SONAR_TOKEN }} /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths="UserServiceTests/TestResults/**/*.coveragexml"
           dotnet build 'User Service/User Service/User Service.csproj' --no-incremental
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --collect "Code Coverage"
-          ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token=${{ secrets.SONAR_TOKEN }}
 
+      - name: Convert .coverage to .coveragexml
+        shell: powershell
+        run: |
+          $coverageFiles = Get-ChildItem -Path 'UserServiceTests/TestResults/' -Filter *.coverage -Recurse
+          foreach ($coverageFile in $coverageFiles) {
+              &"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CodeCoverage.exe" analyze /output:$($coverageFile.FullName).xml $coverageFile.FullName
+          }
+
+      - name: Complete SonarQube analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        shell: powershell
+        run: |
+          ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token=${{ secrets.SONAR_TOKEN }}
   docker:
     needs: sonarqube
     runs-on: ubuntu-latest
