@@ -92,7 +92,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          ./.sonar/scanner/dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token=${{ secrets.SONAR_TOKEN }} /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths="User Service/User Service/coverage.xml"
+          ./.sonar/scanner/dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token=${{ secrets.SONAR_TOKEN }} /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths="UserServiceTests/TestResults/ed1cd3c2-257d-42fa-a63c-47a366a5598e/maike_LAPTOP-OBMJ3NBG_2024-06-11.13_31_22.coverage"
           dotnet build 'User Service/User Service/User Service.csproj' --no-incremental
           dotnet test 'UserServiceTests/UserServiceTests.csproj' --collect "Code Coverage"
           ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token=${{ secrets.SONAR_TOKEN }}
