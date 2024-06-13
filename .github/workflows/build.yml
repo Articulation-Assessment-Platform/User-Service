@@ -93,7 +93,7 @@ jobs:
         run: |
           ./.sonar/scanner/dotnet-sonarscanner begin /k:"Articulation-Assessment-Platform_User-Service" /o:"articulation-assessment-platform" /d:sonar.token=${{ secrets.SONAR_TOKEN }} /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths="UserServiceTests/TestResults/**/*.xml"
           dotnet build 'User Service/User Service/User Service.csproj' --no-incremental
-          dotnet test 'UserServiceTests/UserServiceTests.csproj' --collect "Code Coverage"
+          dotnet-coverage collect "dotnet test" -f xml -o "UserServiceTests/TestResults/**/*.xml"
           ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token=${{ secrets.SONAR_TOKEN }}
   docker:
     needs: sonarqube
