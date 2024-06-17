@@ -111,3 +111,9 @@ C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User S
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Azure.Core.Amqp.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Azure.Messaging.ServiceBus.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\Microsoft.Azure.Amqp.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\maike\Articulation-Assessment-Platform\User-Service\User Service\User Service\bin\Debug\net8.0\System.Memory.Data.dll

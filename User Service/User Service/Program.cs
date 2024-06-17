@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using User_Service.Data;
+using User_Service.Messaging;
 using User_Service.Repository;
 using User_Service.Repository.Interfaces;
 using User_Service.Service;
@@ -20,6 +21,7 @@ builder.Services.AddScoped<IParentService, ParentService>();
 
 builder.Services.AddScoped<IChildRepository, ChildRepository>();
 builder.Services.AddScoped<IChildService, ChildService>();
+builder.Services.AddTransient<UserDeletionMessaging>();
 
 builder.Services.AddControllers();
 
