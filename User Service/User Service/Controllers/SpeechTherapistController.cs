@@ -60,7 +60,7 @@ namespace User_Service.Controllers
 
         // Remove account
         [HttpDelete("remove")]
-        public IActionResult RemoveAccount()
+        public async Task<IActionResult> RemoveAccount()
         {
             // Get the user ID from the token's claims
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -69,8 +69,14 @@ namespace User_Service.Controllers
             {
                 return BadRequest("Account not found");
             }
+            SpeechTherapist user = await _speechTherapistService.GetInformation(Convert.ToInt32(userId));
 
-            _speechTherapistService.RemoveAccount(Convert.ToInt32(userId));
+            if (user == null)
+            {
+                return NotFound("No user found to delete");
+            }
+
+            _speechTherapistService.RemoveAccount(user);
 
             return Ok("User deleted successfully.");
         }

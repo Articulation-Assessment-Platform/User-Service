@@ -35,11 +35,10 @@ namespace User_Service.Service
         }
 
 
-        public async void RemoveAccount(int id)
+        public async void RemoveAccount(SpeechTherapist user)
         {
-            SpeechTherapist sp = await GetInformation(id);
-            _speechTherapistRepository.Remove(sp);
-            _userDeletionMessaging.SendUserDeletionMessageAsync(id);
+            _speechTherapistRepository.Remove(user);
+            await _userDeletionMessaging.SendUserDeletionMessageAsync(user.Id);
         }
     }
 }
