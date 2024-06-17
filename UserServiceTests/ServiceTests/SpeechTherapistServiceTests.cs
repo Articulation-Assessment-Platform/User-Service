@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Moq;
+using User_Service.Messaging;
 using User_Service.Models;
 using User_Service.Repository.Interfaces;
 using User_Service.Service;
@@ -16,8 +17,9 @@ namespace UserServiceTests.Service
             // Arrange
             var expectedSpeechTherapist = new SpeechTherapist { Id = 1, FirstName = "Maike", LastName="Meek",  Email="maikemeek2002@gmail.com"};
             var mockRepository = new Mock<ISpeechTherapistRepository>();
+            var mock = new Mock<UserDeletionMessaging>();
             mockRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync(expectedSpeechTherapist);
-            var service = new SpeechTherapistService(mockRepository.Object);
+            var service = new SpeechTherapistService(mockRepository.Object, mock.Object);
 
             // Act
             var result = await service.GetInformation(1);
@@ -36,8 +38,9 @@ namespace UserServiceTests.Service
             // Arrange
             var speechTherapistToAdd = new SpeechTherapist { Id = 1, FirstName = "Maike", LastName = "Meek", Email = "maikemeek2002@gmail.com" };
             var mockRepository = new Mock<ISpeechTherapistRepository>();
+            var mock = new Mock<UserDeletionMessaging>();
             mockRepository.Setup(repo => repo.AddAsync(speechTherapistToAdd)).ReturnsAsync(speechTherapistToAdd);
-            var service = new SpeechTherapistService(mockRepository.Object);
+            var service = new SpeechTherapistService(mockRepository.Object, mock.Object);
 
             // Act
             var result = await service.AddSpeechTherapist(speechTherapistToAdd);
