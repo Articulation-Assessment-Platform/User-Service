@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\messaging\\userdeletionmessaging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\messaging\\userdeletionmessaging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\service\\speechtherapistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\service\\speechtherapistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\controllers\\speechtherapistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\controllers\\speechtherapistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\coverlet.runsettings||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\coverlet.runsettings||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
@@ -17,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\coverlet.runsettings||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\coverlet.runsettings||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\service\\speechtherapistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\service\\speechtherapistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\controllers\\childcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,10 +59,6 @@
       "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\data\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\controllers\\speechtherapistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\controllers\\speechtherapistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -69,10 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\controllers\\parentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\controllers\\parentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|solutionrelative:user service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03975ADD-939D-43E9-AE5F-9F71F48D1EC3}|User Service\\User Service.csproj|c:\\users\\maike\\articulation-assessment-platform\\user-service\\user service\\user service\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -155,6 +159,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserDeletionMessaging.cs",
+              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Messaging\\UserDeletionMessaging.cs",
+              "RelativeDocumentMoniker": "User Service\\Messaging\\UserDeletionMessaging.cs",
+              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Messaging\\UserDeletionMessaging.cs",
+              "RelativeToolTip": "User Service\\Messaging\\UserDeletionMessaging.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T18:08:46.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Program.cs",
+              "RelativeDocumentMoniker": "User Service\\Program.cs",
+              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Program.cs",
+              "RelativeToolTip": "User Service\\Program.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAswFEAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T12:03:16.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "coverlet.runsettings",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\coverlet.runsettings",
               "RelativeDocumentMoniker": "User Service\\coverlet.runsettings",
@@ -162,38 +192,11 @@
               "RelativeToolTip": "User Service\\coverlet.runsettings",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-06-13T12:22:41.637Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T12:22:41.637Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "coverage.xml",
-              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\coverage.xml",
-              "RelativeDocumentMoniker": "User Service\\coverage.xml",
-              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\coverage.xml",
-              "RelativeToolTip": "User Service\\coverage.xml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2024-06-13T12:22:26.393Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User Service.csproj",
-              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\User Service.csproj",
-              "RelativeDocumentMoniker": "User Service\\User Service.csproj",
-              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\User Service.csproj",
-              "RelativeToolTip": "User Service\\User Service.csproj",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-11T12:47:41.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "coverlet.runsettings",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\coverlet.runsettings",
               "RelativeDocumentMoniker": "User Service\\coverlet.runsettings",
@@ -201,25 +204,23 @@
               "RelativeToolTip": "User Service\\coverlet.runsettings",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-06-11T11:57:28.938Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-11T11:57:28.938Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "SpeechTherapistService.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Service\\SpeechTherapistService.cs",
               "RelativeDocumentMoniker": "User Service\\Service\\SpeechTherapistService.cs",
               "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Service\\SpeechTherapistService.cs",
               "RelativeToolTip": "User Service\\Service\\SpeechTherapistService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAQwCkAAAAAAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAswCoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T15:11:13.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T15:11:13.412Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "VisualStudio.gitignore",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\VisualStudio.gitignore",
               "RelativeDocumentMoniker": "User Service\\VisualStudio.gitignore",
@@ -227,12 +228,11 @@
               "RelativeToolTip": "User Service\\VisualStudio.gitignore",
               "ViewState": "AQIAAAUBAAAAAAAAAAAWwBkBAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-29T07:51:16.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T07:51:16.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ISpeechTherapistService.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Service\\Interfaces\\ISpeechTherapistService.cs",
               "RelativeDocumentMoniker": "User Service\\Service\\Interfaces\\ISpeechTherapistService.cs",
@@ -240,25 +240,47 @@
               "RelativeToolTip": "User Service\\Service\\Interfaces\\ISpeechTherapistService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T12:10:00.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T12:10:00.035Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Program.cs",
-              "RelativeDocumentMoniker": "User Service\\Program.cs",
-              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Program.cs",
-              "RelativeToolTip": "User Service\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAIAwwCUAAAAgAAAA",
+              "DocumentIndex": 3,
+              "Title": "SpeechTherapistController.cs",
+              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\SpeechTherapistController.cs",
+              "RelativeDocumentMoniker": "User Service\\Controllers\\SpeechTherapistController.cs",
+              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\SpeechTherapistController.cs",
+              "RelativeToolTip": "User Service\\Controllers\\SpeechTherapistController.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAzwD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T12:03:16.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:12:45.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User Service.csproj",
+              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\User Service.csproj",
+              "RelativeDocumentMoniker": "User Service\\User Service.csproj",
+              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\User Service.csproj",
+              "RelativeToolTip": "User Service\\User Service.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAABewBgAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-11T12:47:41.252Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "coverage.xml",
+              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\coverage.xml",
+              "RelativeDocumentMoniker": "User Service\\coverage.xml",
+              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\coverage.xml",
+              "RelativeToolTip": "User Service\\coverage.xml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-06-13T12:22:26.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ChildController.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\ChildController.cs",
               "RelativeDocumentMoniker": "User Service\\Controllers\\ChildController.cs",
@@ -266,12 +288,11 @@
               "RelativeToolTip": "User Service\\Controllers\\ChildController.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAswBsAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T15:07:16.805Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T15:07:16.805Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "User Service.http",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\User Service.http",
               "RelativeDocumentMoniker": "User Service\\User Service.http",
@@ -279,12 +300,11 @@
               "RelativeToolTip": "User Service\\User Service.http",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-05-29T07:51:12.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T07:51:12.239Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "BaseRepository.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Repository\\BaseRepository.cs",
               "RelativeDocumentMoniker": "User Service\\Repository\\BaseRepository.cs",
@@ -292,12 +312,11 @@
               "RelativeToolTip": "User Service\\Repository\\BaseRepository.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAqwBoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:15:54.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:15:54.836Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "SpeechTherapist.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\SpeechTherapist.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\SpeechTherapist.cs",
@@ -305,12 +324,11 @@
               "RelativeToolTip": "User Service\\Models\\SpeechTherapist.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T10:31:46.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T10:31:46.224Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "UserContext.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Data\\UserContext.cs",
               "RelativeDocumentMoniker": "User Service\\Data\\UserContext.cs",
@@ -318,12 +336,11 @@
               "RelativeToolTip": "User Service\\Data\\UserContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:08:25.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:08:25.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\User.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\User.cs",
@@ -331,12 +348,11 @@
               "RelativeToolTip": "User Service\\Models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T10:31:42.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T10:31:42.745Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Child.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\Child.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\Child.cs",
@@ -344,12 +360,11 @@
               "RelativeToolTip": "User Service\\Models\\Child.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T13:12:46.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T13:12:46.386Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Parent.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\Parent.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\Parent.cs",
@@ -357,12 +372,11 @@
               "RelativeToolTip": "User Service\\Models\\Parent.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:12:04.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:12:04.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Dockerfile",
               "RelativeDocumentMoniker": "User Service\\Dockerfile",
@@ -370,12 +384,11 @@
               "RelativeToolTip": "User Service\\Dockerfile",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-29T10:13:07.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T10:13:07.346Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Models\\Role.cs",
               "RelativeDocumentMoniker": "User Service\\Models\\Role.cs",
@@ -383,25 +396,11 @@
               "RelativeToolTip": "User Service\\Models\\Role.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:11:04.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:11:04.676Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SpeechTherapistController.cs",
-              "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\SpeechTherapistController.cs",
-              "RelativeDocumentMoniker": "User Service\\Controllers\\SpeechTherapistController.cs",
-              "ToolTip": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\SpeechTherapistController.cs",
-              "RelativeToolTip": "User Service\\Controllers\\SpeechTherapistController.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAYwFAAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:12:45.838Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "ChildDTO.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\DTO\\ChildDTO.cs",
               "RelativeDocumentMoniker": "User Service\\DTO\\ChildDTO.cs",
@@ -409,12 +408,11 @@
               "RelativeToolTip": "User Service\\DTO\\ChildDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T15:14:14.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T15:14:14.156Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\DTO\\UserDTO.cs",
               "RelativeDocumentMoniker": "User Service\\DTO\\UserDTO.cs",
@@ -422,12 +420,11 @@
               "RelativeToolTip": "User Service\\DTO\\UserDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T15:14:17.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T15:14:17.58Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "User Service\\Properties\\launchSettings.json",
@@ -435,12 +432,11 @@
               "RelativeToolTip": "User Service\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-29T07:51:10.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T07:51:10.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
@@ -448,12 +444,11 @@
               "RelativeToolTip": "docker-compose.yml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-05-29T07:27:20.942Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T07:27:20.942Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ParentController.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Controllers\\ParentController.cs",
               "RelativeDocumentMoniker": "User Service\\Controllers\\ParentController.cs",
@@ -461,12 +456,11 @@
               "RelativeToolTip": "User Service\\Controllers\\ParentController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAA0wAgAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T15:07:11.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T15:07:11.54Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "docker-compose.override.yml",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\docker-compose.override.yml",
               "RelativeDocumentMoniker": "docker-compose.override.yml",
@@ -474,12 +468,11 @@
               "RelativeToolTip": "docker-compose.override.yml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-05-29T07:27:22.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T07:27:22.91Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "docker-compose.dcproj",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\docker-compose.dcproj",
               "RelativeDocumentMoniker": "docker-compose.dcproj",
@@ -487,12 +480,11 @@
               "RelativeToolTip": "docker-compose.dcproj",
               "ViewState": "AQIAAAAAAAAAAAAAAABkwAgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-29T07:51:05.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T07:51:05.13Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "SpeechTherapistRepository.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Repository\\SpeechTherapistRepository.cs",
               "RelativeDocumentMoniker": "User Service\\Repository\\SpeechTherapistRepository.cs",
@@ -500,12 +492,11 @@
               "RelativeToolTip": "User Service\\Repository\\SpeechTherapistRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:15:59.256Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:15:59.256Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ParentService.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Service\\ParentService.cs",
               "RelativeDocumentMoniker": "User Service\\Service\\ParentService.cs",
@@ -513,12 +504,11 @@
               "RelativeToolTip": "User Service\\Service\\ParentService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:21:33.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:21:33.837Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "IParentService.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Service\\Interfaces\\IParentService.cs",
               "RelativeDocumentMoniker": "User Service\\Service\\Interfaces\\IParentService.cs",
@@ -526,12 +516,11 @@
               "RelativeToolTip": "User Service\\Service\\Interfaces\\IParentService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:21:44.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:21:44.306Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "ParentRepository.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Repository\\ParentRepository.cs",
               "RelativeDocumentMoniker": "User Service\\Repository\\ParentRepository.cs",
@@ -539,12 +528,11 @@
               "RelativeToolTip": "User Service\\Repository\\ParentRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:15:57.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:15:57.508Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ChildRepository.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Repository\\ChildRepository.cs",
               "RelativeDocumentMoniker": "User Service\\Repository\\ChildRepository.cs",
@@ -552,12 +540,11 @@
               "RelativeToolTip": "User Service\\Repository\\ChildRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:15:56.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:15:56.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "IChildRepository.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Repository\\Interfaces\\IChildRepository.cs",
               "RelativeDocumentMoniker": "User Service\\Repository\\Interfaces\\IChildRepository.cs",
@@ -565,12 +552,11 @@
               "RelativeToolTip": "User Service\\Repository\\Interfaces\\IChildRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:15:48.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:15:48.698Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "IParentRepository.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Repository\\Interfaces\\IParentRepository.cs",
               "RelativeDocumentMoniker": "User Service\\Repository\\Interfaces\\IParentRepository.cs",
@@ -578,12 +564,11 @@
               "RelativeToolTip": "User Service\\Repository\\Interfaces\\IParentRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:15:44.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:15:44.394Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ISpeechTherapistRepository.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\Repository\\Interfaces\\ISpeechTherapistRepository.cs",
               "RelativeDocumentMoniker": "User Service\\Repository\\Interfaces\\ISpeechTherapistRepository.cs",
@@ -591,12 +576,11 @@
               "RelativeToolTip": "User Service\\Repository\\Interfaces\\ISpeechTherapistRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:15:42.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:15:42.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "ParentDTO.cs",
               "DocumentMoniker": "C:\\Users\\maike\\Articulation-Assessment-Platform\\User-Service\\User Service\\User Service\\DTO\\ParentDTO.cs",
               "RelativeDocumentMoniker": "User Service\\DTO\\ParentDTO.cs",
@@ -604,8 +588,7 @@
               "RelativeToolTip": "User Service\\DTO\\ParentDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T11:15:12.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T11:15:12.981Z"
             }
           ]
         }
