@@ -139,6 +139,7 @@ jobs:
           kubectl delete -f "User Service/User Service/aks-manifest.yml" && kubectl apply -f "User Service/User Service/aks-manifest.yml"
 
   automated-api-tests:
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
