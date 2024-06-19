@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using User_Service.DTO;
+using User_Service.Messaging;
 using User_Service.Models;
 using User_Service.Service.Interfaces;
 
@@ -14,10 +15,12 @@ namespace User_Service.Controllers
     public class SpeechTherapistController : ControllerBase
     {
         private readonly ISpeechTherapistService _speechTherapistService;
+        private readonly UserRegisterMessaging _userRegisterMessaging;
 
-        public SpeechTherapistController(ISpeechTherapistService speechTherapistService)
+        public SpeechTherapistController(ISpeechTherapistService speechTherapistService, UserRegisterMessaging userRegisterMessaging)
         {
             _speechTherapistService = speechTherapistService;
+            _userRegisterMessaging = userRegisterMessaging;
         }
 
         // Get your information
@@ -83,13 +86,13 @@ namespace User_Service.Controllers
 
         [HttpPost("add")]
         [AllowAnonymous]
-        public async Task<IActionResult> AddSpeechTherapist([FromBody] SpeechTherapistDTO model)
+        public async Task<IActionResult> AddSpeechTherapist([FromBody] RegisterDTO model)
         {
             var speechTherapist = new SpeechTherapist
             {
                 Email = model.Email,
                 FirstName = model.FirstName,
-                LastName = model.LastName
+                LastName = model.LastName,
             };
             try
             {
@@ -100,6 +103,7 @@ namespace User_Service.Controllers
                 }
 
                 return Ok(user);
+
             }catch(Exception ex)
             {
                 return BadRequest("Already a user with this information.");
