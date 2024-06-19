@@ -14,7 +14,7 @@ namespace User_Service.Messaging
         {
         }
 
-        public async Task SendUserDeletionMessageAsync(int userId, string email, string password, string role)
+        public async Task SendUserRegister(int userId, string email, string password, string role)
         {
             await using var client = new ServiceBusClient(_connectionString);
             var sender = client.CreateSender(_topicName);
@@ -40,4 +40,5 @@ namespace User_Service.Messaging
                 await sender.CloseAsync();
             }
         }
+    }
 }

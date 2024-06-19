@@ -101,10 +101,11 @@ namespace User_Service.Controllers
                 {
                     return NotFound("User not found");
                 }
+                _userRegisterMessaging.SendUserRegister(user.Id, model.Email, model.Password, "Speech Therapist");
 
                 return Ok(user);
-
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 return BadRequest("Already a user with this information.");
             }
