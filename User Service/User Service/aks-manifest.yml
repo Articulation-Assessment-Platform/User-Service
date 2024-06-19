@@ -8,10 +8,12 @@ spec:
   selector:
     matchLabels:
       app: user-service
+      tier: backend
   template:
     metadata:
       labels:
         app: user-service
+        tier: backend
     spec:
       containers:
       - name: user-service
