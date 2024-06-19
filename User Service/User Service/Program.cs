@@ -22,6 +22,7 @@ builder.Services.AddScoped<IParentService, ParentService>();
 builder.Services.AddScoped<IChildRepository, ChildRepository>();
 builder.Services.AddScoped<IChildService, ChildService>();
 builder.Services.AddTransient<UserDeletionMessaging>();
+builder.Services.AddTransient<UserRegisterMessaging>();
 
 builder.Services.AddControllers();
 
