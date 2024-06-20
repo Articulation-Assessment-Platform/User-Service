@@ -6,7 +6,6 @@ using User_Service.Service.Interfaces;
 
 namespace User_Service.Controllers
 {
-    [Authorize(Roles = "SpeechTherapist")]
     [ApiController]
     [Route("api/[controller]")]
     public class ChildController : ControllerBase
